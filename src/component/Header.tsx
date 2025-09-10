@@ -1,6 +1,4 @@
-
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
@@ -16,9 +14,32 @@ import {
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Detect scroll direction
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // scrolling down → hide navbar
+        setShowNavbar(false);
+      } else {
+        // scrolling up → show navbar
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="w-full">
+    <header
+      className={`w-full fixed top-0 z-50 transition-transform duration-300 ${
+        showNavbar ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       {/* Top Bar */}
       <div className="bg-gray-700 text-white text-sm flex justify-between items-center px-4 md:px-6 py-2">
         <div className="flex items-center space-x-2">
@@ -44,8 +65,6 @@ const Header: React.FC = () => {
           <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
           <div>
             <h1 className="text-xl font-bold text-blue-600">test</h1>
-            {/* <h1 className="text-xl font-bold text-blue-900 -mt-1">program</h1> */}
-            {/* <span className="text-sm text-yellow-600">run</span> */}
           </div>
         </Link>
 
@@ -63,15 +82,24 @@ const Header: React.FC = () => {
             <Info className="w-4 h-4" />
             <span>About Us</span>
           </Link>
-          <Link to="/blood-tests" className="flex items-center space-x-1 hover:text-blue-700">
+          <Link
+            to="/blood-tests"
+            className="flex items-center space-x-1 hover:text-blue-700"
+          >
             <Droplet className="w-4 h-4" />
             <span>Blood Tests</span>
           </Link>
-          <Link to="/packages" className="flex items-center space-x-1 hover:text-blue-700">
+          <Link
+            to="/packages"
+            className="flex items-center space-x-1 hover:text-blue-700"
+          >
             <Package className="w-4 h-4" />
             <span>Health Packages</span>
           </Link>
-          <Link to="/contact" className="flex items-center space-x-1 hover:text-blue-700">
+          <Link
+            to="/contact"
+            className="flex items-center space-x-1 hover:text-blue-700"
+          >
             <Package className="w-4 h-4" />
             <span>Contact Us</span>
           </Link>
@@ -105,13 +133,25 @@ const Header: React.FC = () => {
           <Link to="/about" onClick={() => setMobileOpen(false)} className="block">
             About Us
           </Link>
-          <Link to="/blood-tests" onClick={() => setMobileOpen(false)} className="block">
+          <Link
+            to="/blood-tests"
+            onClick={() => setMobileOpen(false)}
+            className="block"
+          >
             Blood Tests
           </Link>
-          <Link to="/packages" onClick={() => setMobileOpen(false)} className="block">
+          <Link
+            to="/packages"
+            onClick={() => setMobileOpen(false)}
+            className="block"
+          >
             Health Packages
           </Link>
-          <Link to="/appointment" onClick={() => setMobileOpen(false)} className="block">
+          <Link
+            to="/appointment"
+            onClick={() => setMobileOpen(false)}
+            className="block"
+          >
             <button className="w-full flex items-center justify-center bg-yellow-500 text-white px-5 py-2 rounded-full font-medium hover:bg-yellow-600 transition">
               Make Appointment
               <ArrowRight className="w-4 h-4 ml-2" />
