@@ -71,6 +71,10 @@ const Header: React.FC = () => {
             <Package className="w-4 h-4" />
             <span>Health Packages</span>
           </Link>
+          <Link to="/contact" className="flex items-center space-x-1 hover:text-blue-700">
+            <Package className="w-4 h-4" />
+            <span>Contact Us</span>
+          </Link>
         </nav>
 
         {/* Desktop Button */}

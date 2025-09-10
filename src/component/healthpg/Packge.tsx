@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
 
 const packages = [
   {
@@ -102,9 +102,9 @@ const Packge = () => {
 
       {/* View All Button */}
       <div className="flex justify-center mt-10">
-        <button className="flex items-center gap-2 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-500 transition">
+       <Link to="/UNIFIT-PLUS"> <button className="flex items-center gap-2 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-500 transition">
           View All Packages <ArrowRight size={18} />
-        </button>
+        </button></Link>
       </div>
 
       {/* Emergency Banner */}
