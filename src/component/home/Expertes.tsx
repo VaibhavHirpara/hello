@@ -1,4 +1,3 @@
-"use client";
 
 import { ArrowRight, FlaskConical, FileText, Droplet, ClipboardCheck } from "lucide-react";
 
