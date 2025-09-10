@@ -1,5 +1,6 @@
 import AboutBt from "./AboutBt"
 import HeroBloodtest from "./HeroBloodtest"
+import TestBt from "./TestBt"
 
 
 const BloodTestMain = () => {
@@ -7,6 +8,7 @@ const BloodTestMain = () => {
     <>
     <HeroBloodtest/>
     <AboutBt/>
+    <TestBt/>
     </>
   )
 }
