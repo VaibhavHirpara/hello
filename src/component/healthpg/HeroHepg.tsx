@@ -1,12 +1,10 @@
 import { Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
-
-const HeroAb = () => {
+const HeroHepg = () => {
   return (
-
     <>
-      <section className="relative w-full mb-20">
+    <section className="relative w-full mb-20">
         {/* Background section */}
         <div className="bg-blue-500 items-center py-10 z-1">
 
@@ -23,16 +21,15 @@ const HeroAb = () => {
           {/* Breadcrumb */}
       
         </div>
-         <div className="flex -mt-9 items-center ms-30  bg-white text-black px-4 py-2 w-50  z-10 rounded-md ">
+         <div className="flex -mt-9 items-center ms-30  bg-white text-black px-4 py-2 w-60  z-10 rounded-md ">
             <Home className="w-4 h-4 mr-2" />
             <Link to="/"> <span className="text-sm" >Home</span> </Link>
             <span className="mx-2">{`>>`}</span>
-            <span className="text-sm font-semibold">About Us</span>
+            <span className="text-sm font-semibold">Health Packages</span>
           </div>
       </section>
-         
     </>
   )
 }
 
-export default HeroAb
+export default HeroHepg

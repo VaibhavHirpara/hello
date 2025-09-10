@@ -1,5 +1,6 @@
 
 import { Home } from "lucide-react";
+import { Link } from "react-router-dom";
 // import bloodTestImage from './assets/blood-test.jpg'; // Replace with your image path
 
 
@@ -24,9 +25,9 @@ const HeroBloodtest = () => {
         </div>
          <div className="flex -mt-9 items-center ms-30  bg-white text-black px-4 py-2 w-55  z-10 rounded-md ">
             <Home className="w-4 h-4 mr-2" />
-            <span className="text-sm">Home</span>
+            <Link to="/"> <span className="text-sm" >Home</span> </Link>
             <span className="mx-2">{`>>`}</span>
-            <span className="text-sm font-semibold">Blood Tests</span>
+             <Link to="/blood-tests">  <span className="text-sm font-semibold">Blood Tests</span> </Link>
           </div>
       </section>
     </>
