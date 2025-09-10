@@ -1,4 +1,5 @@
 import { FaEye, FaArrowRight, FaExternalLinkAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const tests = Array(10).fill({
@@ -48,9 +49,9 @@ const TestBt = () => {
 
       {/* View All Button */}
       <div className="text-center mt-6">
-        <button className="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600 inline-flex items-center gap-2">
+     <Link to="/blood-tests/cbc"> <button className="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600 inline-flex items-center gap-2">
           View All Tests <FaArrowRight />
-        </button>
+        </button></Link>
       </div>
 
     </div>
