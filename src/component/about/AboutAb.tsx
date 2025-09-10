@@ -1,5 +1,6 @@
 import { CheckCircle } from "lucide-react";
 
+
 const AboutAb = () => {
     return (
         <>
@@ -60,6 +61,40 @@ const AboutAb = () => {
                             </li>
                         </ul>
                     </div>
+                </div>
+            </section>
+            <section className="flex flex-col md:flex-row justify-center items-center gap-6 p-6 bg-white">
+                {/* Mission Card */}
+                <div className="bg-orange-50 p-6 rounded-lg h-40 shadow-md flex-2/3">
+                    <h2 className="text-orange-600 font-bold text-lg mb-2">Our Mission</h2>
+                    <p className="text-gray-700 text-sm">
+                        To establish the highest standards in Quality, Expertise, and Service
+                        in order to become the preferred choice of the medical fraternity and
+                        end-consumer for clinical diagnostic services.
+                    </p>
+                </div>
+                <div className="flex-1/3">
+                    <img
+                        src={"https://images.pexels.com/photos/3845764/pexels-photo-3845764.jpeg?cs=srgb&dl=pexels-anna-shvets-3845764.jpg&fm=jpg"}
+                        alt="Mission"
+                        className="w-full h-40 object-cover rounded-lg shadow-md"
+                    />
+                </div>
+
+                {/* Vision Card */}
+                <div className="bg-pink-50 p-6 rounded-lg h-40 shadow-md flex-2/3">
+                    <h2 className="text-pink-600 font-bold text-lg mb-2">Our Vision</h2>
+                    <p className="text-gray-700 text-sm">
+                        Continuously enhancing our skills to be the finest in the field of
+                        pathology while maintaining ethical standards.
+                    </p>
+                </div>
+                <div className="flex-1/3">
+                    <img
+                        src={"https://images.pexels.com/photos/3845764/pexels-photo-3845764.jpeg?cs=srgb&dl=pexels-anna-shvets-3845764.jpg&fm=jpg"}
+                        alt="Vision"
+                        className="w-full h-40 object-cover rounded-lg shadow-md"
+                    />
                 </div>
             </section>
 
