@@ -41,7 +41,7 @@ const HeroHm = () => {
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
 
   return (
-    <section className="w-full relative px-4 py-8">
+    <section className="w-full relative my-10 py-8">
       <div className="max-w-9xl mx-auto relative overflow-hidden rounded-3xl shadow-lg h-[500px]">
         {slides.map((slide, index) => (
           <div
@@ -51,7 +51,7 @@ const HeroHm = () => {
             }`}
           >
             {/* Left Content */}
-            <div className="flex-1 bg-blue-500 text-white p-8 flex flex-col justify-center rounded-l-3xl">
+            <div className="flex-1 bg-blue-500 text-white h-130 p-8 flex flex-col justify-center rounded-l-3xl">
               <p className="text-sm">{slide.subtitle}</p>
               <h1 className="text-3xl md:text-5xl font-bold mb-6">
                 {slide.title}
