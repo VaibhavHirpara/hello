@@ -56,7 +56,7 @@ const HeroBtCbc = () => {
                     <span className="text-sm font-semibold">CBC(complete Blood Count)</span>
                 </div>
             </section>
-            <div className="max-w-7xl mx-auto bg-white p-6 my-20 space-y-6">
+            <div className="max-w-7xl mx-auto bg-white pt-30 pb-10  my-20 space-y-6">
 
                 {/* Header Section */}
                 <div className="flex justify-between items-center">

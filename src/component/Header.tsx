@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   Mail,
   Phone,
@@ -21,10 +21,8 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        // scrolling down → hide navbar
         setShowNavbar(false);
       } else {
-        // scrolling up → show navbar
         setShowNavbar(true);
       }
       setLastScrollY(window.scrollY);
@@ -69,40 +67,76 @@ const Header: React.FC = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex space-x-6 text-gray-600 font-medium">
-          <Link
+        <nav className="hidden md:flex space-x-4 text-gray-600 font-medium">
+          <NavLink
             to="/"
-            className="flex items-center space-x-1 text-yellow-600 hover:text-yellow-700"
+            end
+            className={({ isActive }) =>
+              `px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-yellow-700"
+              }`
+            }
           >
-            <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm">
-              Home
-            </span>
-          </Link>
-          <Link to="/about" className="flex items-center space-x-1 hover:text-blue-700">
-            <Info className="w-4 h-4" />
-            <span>About Us</span>
-          </Link>
-          <Link
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `flex items-center px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-blue-700"
+              }`
+            }
+          >
+            <Info className="w-4 h-4 mr-1" />
+            About Us
+          </NavLink>
+
+          <NavLink
             to="/blood-tests"
-            className="flex items-center space-x-1 hover:text-blue-700"
+            className={({ isActive }) =>
+              `flex items-center px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-blue-700"
+              }`
+            }
           >
-            <Droplet className="w-4 h-4" />
-            <span>Blood Tests</span>
-          </Link>
-          <Link
+            <Droplet className="w-4 h-4 mr-1" />
+            Blood Tests
+          </NavLink>
+
+          <NavLink
             to="/packages"
-            className="flex items-center space-x-1 hover:text-blue-700"
+            className={({ isActive }) =>
+              `flex items-center px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-blue-700"
+              }`
+            }
           >
-            <Package className="w-4 h-4" />
-            <span>Health Packages</span>
-          </Link>
-          <Link
+            <Package className="w-4 h-4 mr-1" />
+            Health Packages
+          </NavLink>
+
+          <NavLink
             to="/contact"
-            className="flex items-center space-x-1 hover:text-blue-700"
+            className={({ isActive }) =>
+              `flex items-center px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-blue-700"
+              }`
+            }
           >
-            <Package className="w-4 h-4" />
-            <span>Contact Us</span>
-          </Link>
+            <Package className="w-4 h-4 mr-1" />
+            Contact Us
+          </NavLink>
         </nav>
 
         {/* Desktop Button */}
@@ -127,26 +161,59 @@ const Header: React.FC = () => {
       {/* Mobile Nav */}
       {mobileOpen && (
         <div className="md:hidden bg-white shadow-lg px-4 py-6 space-y-4 text-gray-700 font-medium">
-          <Link to="/" onClick={() => setMobileOpen(false)} className="block">
+          <NavLink
+            to="/"
+            end
+            onClick={() => setMobileOpen(false)}
+            className={({ isActive }) =>
+              `block px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-yellow-700"
+              }`
+            }
+          >
             Home
-          </Link>
-          <Link to="/about" onClick={() => setMobileOpen(false)} className="block">
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={() => setMobileOpen(false)}
+            className={({ isActive }) =>
+              `block px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-blue-700"
+              }`
+            }
+          >
             About Us
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/blood-tests"
             onClick={() => setMobileOpen(false)}
-            className="block"
+            className={({ isActive }) =>
+              `block px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-blue-700"
+              }`
+            }
           >
             Blood Tests
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/packages"
             onClick={() => setMobileOpen(false)}
-            className="block"
+            className={({ isActive }) =>
+              `block px-4 py-2 rounded-full transition ${
+                isActive
+                  ? "bg-yellow-500 text-white"
+                  : "hover:bg-yellow-100 hover:text-blue-700"
+              }`
+            }
           >
             Health Packages
-          </Link>
+          </NavLink>
           <Link
             to="/appointment"
             onClick={() => setMobileOpen(false)}

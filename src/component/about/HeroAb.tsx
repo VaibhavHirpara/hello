@@ -6,9 +6,9 @@ const HeroAb = () => {
   return (
 
     <>
-      <section className="relative w-full mb-20">
+      <section className="relative w-full  mb-20">
         {/* Background section */}
-        <div className="bg-blue-500 items-center py-10 z-1">
+        <div className="bg-blue-500  items-center pt-30 pb-10 z-1">
 
           {/* Left Content */}
           <div className=" text-white p-10 flex max-w-7xl max-auto flex-col justify-center h-full">
