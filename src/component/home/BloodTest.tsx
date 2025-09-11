@@ -1,5 +1,6 @@
 
 import { ArrowUpRight, Check } from "lucide-react"; // install lucide-react for icons
+import { Link } from "react-router-dom";
 
 const tests = [
   {
@@ -103,9 +104,10 @@ export default function BloodTests() {
 
         {/* View All Button */}
         <div className="flex justify-center mt-10">
+          <Link to="/blood-tests">
           <button className="bg-yellow-500 text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 hover:bg-yellow-600 transition">
             View All Tests <ArrowUpRight size={18} />
-          </button>
+          </button></Link>
         </div>
       </div>
       <div className="my-15 bg-white flex items-center justify-center p-6">
